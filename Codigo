@@ -1,5 +1,4 @@
 // C++ code
-
 // DEFINES LEDS Y PIEZO
 
 #define LED_VERDE1 13
@@ -29,21 +28,22 @@ void setup()
 // FUNCIONES 
 
 
-//Funcion de Predido
+//Funcion de Prendido
 void prender(int led)
 {
   digitalWrite(led, HIGH);
   return;
 }
 
-//Funcion de Predido
+//Funcion de Apagado
 void apagar(int led)
 {
   digitalWrite(led, LOW);
   return;
 }
 
-void prenderApagar(int led, int led2, int repeticiones)
+//Funcion que une las dos funciones anteriores 
+void semaforo(int led, int led2, int repeticiones)
 {
   prender(led);
   prender(led2);
@@ -84,14 +84,14 @@ void prenderApagar(int led, int led2, int repeticiones)
   return;
 }
 
-// te estas portando mal, seras castigada.
+
 void loop()
 {
   contador=1;
-  prenderApagar(LED_VERDE1, LED_VERDE2, 0);
+  semaforo(LED_VERDE1, LED_VERDE2, 0);
   contador=2;
-  prenderApagar(LED_AMARILLO1, LED_AMARILLO2, 2);
+  semaforo(LED_AMARILLO1, LED_AMARILLO2, 2);
   contador=3;
-  prenderApagar(LED_ROJO1, LED_ROJO2, 30);
+  semaforo(LED_ROJO1, LED_ROJO2, 30);
 
 }
