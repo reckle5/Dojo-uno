@@ -3,7 +3,7 @@
 
 
 
-
+![Screenshot](2023-04-20.png)
 
 ## Integrantes
 * Juan Pablo Bianchi
@@ -45,4 +45,4 @@ continuación.
 * En la funcion LOOP ponemos en uso el codigo anterior para que el semaforo funcione correctamente. 
 
 ## Link al Proyecto
-[https://www.tinkercad.com/things/j9VzPzovFgQ-daring-tumelo-turing/editel?sharecode=SgQtuX44ve-T3RQVhKRews8Sb0uD6_6_83XdjDpMo1U)
+https://www.tinkercad.com/things/j9VzPzovFgQ-daring-tumelo-turing/editel?sharecode=SgQtuX44ve-T3RQVhKRews8Sb0uD6_6_83XdjDpMo1U
