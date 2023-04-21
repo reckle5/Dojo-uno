@@ -1,1 +1,97 @@
+// C++ code
 
+// DEFINES LEDS Y PIEZO
+
+#define LED_VERDE1 13
+#define LED_VERDE2 12
+#define LED_AMARILLO1 11
+#define LED_AMARILLO2 10
+#define LED_ROJO1 9
+#define LED_ROJO2 8
+#define SONAR 7
+int contador = 0;
+
+// SETUP & OUTPUTS
+
+void setup()
+{
+  pinMode(LED_VERDE1, OUTPUT);
+  pinMode(LED_VERDE2, OUTPUT);
+  pinMode(LED_AMARILLO1, OUTPUT);
+  pinMode(LED_AMARILLO2, OUTPUT);
+  pinMode(LED_ROJO1, OUTPUT);
+  pinMode(LED_ROJO2, OUTPUT);
+  pinMode(SONAR, OUTPUT);
+
+  Serial.begin(9600);
+}
+
+// FUNCIONES 
+
+
+//Funcion de Predido
+void prender(int led)
+{
+  digitalWrite(led, HIGH);
+  return;
+}
+
+//Funcion de Predido
+void apagar(int led)
+{
+  digitalWrite(led, LOW);
+  return;
+}
+
+void prenderApagar(int led, int led2, int repeticiones)
+{
+  prender(led);
+  prender(led2);
+  if(contador==2)
+  {
+    for(int i=0;i< repeticiones ;i++)
+    {
+      //prendido
+      tone(SONAR, 200, 1000);
+      delay(100);
+      //apagado
+      tone(SONAR, 0, 1000);
+      delay(1900);
+    }
+    delay(1000);
+  }
+  else
+  {
+    if(contador==3)
+    {
+      for(int i=0;i< repeticiones ;i++)
+      {  
+        //prendido
+        tone(SONAR, 800, 1000);
+        delay(100);
+        //apagado
+        tone(SONAR, 0, 1000);
+        delay(900);
+      }
+    }
+    else
+    {
+      delay(45000);
+    }
+  }   
+  apagar(led);
+  apagar(led2);
+  return;
+}
+
+// te estas portando mal, seras castigada.
+void loop()
+{
+  contador=1;
+  prenderApagar(LED_VERDE1, LED_VERDE2, 0);
+  contador=2;
+  prenderApagar(LED_AMARILLO1, LED_AMARILLO2, 2);
+  contador=3;
+  prenderApagar(LED_ROJO1, LED_ROJO2, 30);
+
+}
