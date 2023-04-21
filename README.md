@@ -35,4 +35,14 @@ continuación.
 
 9- Durante el rojo: Tiene que sonar 1 vez por segundo en un tono fuerte.
 
+## Funcionalidad
+
+* Definimos todos los Leds en uso, el sonador e inicializamos un contador que luego va a ser ultilizado para poner en uso la bocina. 
+* Creamos las siguientes funciones:
+- PRENDER, enciende la luz del led
+- APAGAR, apaga la luz del led
+- SEMAFORO, combina las dos funciones anteriores y con un contador e iterando con un for ponemos en uso la bocina para temporizar cuando tiene que sonar
+* En la funcion LOOP ponemos en uso el codigo anterior para que el semaforo funcione correctamente. 
+
 ## Link al Proyecto
+[https://www.tinkercad.com/things/j9VzPzovFgQ-daring-tumelo-turing/editel?sharecode=SgQtuX44ve-T3RQVhKRews8Sb0uD6_6_83XdjDpMo1U)
